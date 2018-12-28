@@ -5,7 +5,7 @@ from .test import test_bp
 __all__ = ["app"]
 
 
-app = Flask("app")
+app = Flask(__name__)
 app.register_blueprint(test_bp)
 
 
