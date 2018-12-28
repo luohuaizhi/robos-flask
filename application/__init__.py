@@ -1,14 +1,12 @@
 from flask import Flask
-from flask import jsonify
+from flask_cors import CORS
+from test import test_bp
+
+__all__ = ["app"]
 
 
 app = Flask("app")
+app.register_blueprint(test_bp)
 
 
-@app.route("/test", methods=["GET"])
-def test():
-    return jsonify({"msg": "test"})
-
-
-if __name__ == "__main__":
-    app.run()
+CORS(app, supports_credentials=True)
