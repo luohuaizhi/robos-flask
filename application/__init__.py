@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_cors import CORS
-from test import test_bp
+from .test import test_bp
 
 __all__ = ["app"]
 
